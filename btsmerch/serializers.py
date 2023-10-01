@@ -1,17 +1,24 @@
 from rest_framework import serializers
 from .models import BtsFashion, BtsAlbum, BT21
 
-class BtsFashionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = BtsFashion
-        fields = '__all__'
+class BTSMechSerializer(serializers.Serializer):
+    imgURL = serializers.CharField()
+    price = serializers.DecimalField(max_digits=10, decimal_places=2)
+    itemName = serializers.CharField()
+
+
+class BtsFashionSerializer(serializers.Serializer):
+    imgURL = serializers.CharField()
+    price = serializers.DecimalField(max_digits=10, decimal_places=2)
+    itemName = serializers.CharField()
+
 
 class BtsAlbumSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = BtsAlbum
-        fields = '__all__'
+    imgURL = serializers.CharField()
+    price = serializers.DecimalField(max_digits=10, decimal_places=2)
+    itemName = serializers.CharField()
 
 class BT21Serializer(serializers.ModelSerializer):
-    class Meta:
-        model = BT21
-        fields = '__all__'
+    imgURL = serializers.CharField()
+    price = serializers.DecimalField(max_digits=10, decimal_places=2)
+    itemName = serializers.CharField()

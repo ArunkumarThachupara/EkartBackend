@@ -14,7 +14,7 @@ class OrderCreateView(APIView):
         if serializer.is_valid():
             # Create a new Order instance and save it to the database
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response({'errorCode': '0', 'message': 'Order Placed Successfully', 'user': serializer.data}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class OrderListView(APIView):

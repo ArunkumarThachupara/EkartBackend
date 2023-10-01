@@ -20,7 +20,7 @@ class CustomerRegistration(APIView):
                 password=serializer.validated_data['password']
             )
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response({'errorCode': '0', 'message': 'Resgistration Successful', 'user':serializer.data }, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class CustomerLogin(APIView):
